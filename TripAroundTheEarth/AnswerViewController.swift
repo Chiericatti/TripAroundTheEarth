@@ -41,31 +41,41 @@ class AnswerViewController: UIViewController {
         return imageView
     }()
     
-    let resultTextView: UITextView = {
-
-        
-        let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = UIColor.clear
-        textView.sizeToFit()
-        textView.tintColor = .black
-        textView.textAlignment = .center
-        textView.font = UIFont.boldSystemFont(ofSize: 34)
-
-        return textView
-    }()
+//    let resultTextField: UITextField = {
+//        
+//        let textField = UITextField()
+//        textField.tr
+//    }
+    
+//    let resultTextView: UITextView = {
+//
+//
+//        let textView = UITextView()
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        textView.backgroundColor = UIColor.gray
+//        textView.sizeToFit()
+//        textView.textColor = .blue
+//        textView.textAlignment = .left
+//        textView.font = UIFont.boldSystemFont(ofSize: 40)
+//
+//        return textView
+//    }()
     
     let answerTextView: UITextView = {
        
         let textView = UITextView()
-        textView.text = "It will take you"
-        textView.textColor = .blue
+        textView.text = "It will take you:"
+        textView.textColor = .black
         textView.font = UIFont.boldSystemFont(ofSize: 30)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
         textView.isScrollEnabled = false
         textView.textAlignment = .center
         textView.backgroundColor = .clear
+        
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderWidth = 2.0
+        
         return textView
     }()
     
@@ -110,10 +120,7 @@ class AnswerViewController: UIViewController {
         
         
         dismiss(animated: true, completion: nil)
-//        ViewController.shared.dayButton.isUserInteractionEnabled = true
-//        ViewController.shared.weekButton.isUserInteractionEnabled = true
-//        ViewController.shared.monthButton.isUserInteractionEnabled = true
-//        ViewController.shared.yearButton.isUserInteractionEnabled = true
+
     }
     
     func setUpConstraints() {
@@ -140,7 +147,7 @@ class AnswerViewController: UIViewController {
         resultTextView.bottomAnchor.constraint(equalTo: returnButton.topAnchor, constant: -300).isActive = true
         resultTextView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        NSLayoutConstraint(item: justGoImageView, attribute: .bottom, relatedBy: .equal, toItem: returnButton, attribute: .top, multiplier: 1, constant: -5).isActive = true
+        NSLayoutConstraint(item: justGoImageView, attribute: .bottom, relatedBy: .equal, toItem: returnButton, attribute: .top, multiplier: 1, constant: -20).isActive = true
         NSLayoutConstraint(item: justGoImageView, attribute: .top, relatedBy: .equal, toItem: resultTextView, attribute: .bottom, multiplier: 1, constant: 20).isActive = true
         NSLayoutConstraint(item: justGoImageView, attribute: .leading, relatedBy: .equal, toItem: answerView, attribute: .leading, multiplier: 1, constant: 5).isActive = true
         NSLayoutConstraint(item: justGoImageView, attribute: .trailing, relatedBy: .equal, toItem: answerView, attribute: .trailing, multiplier: 1, constant: -5).isActive = true

@@ -477,6 +477,10 @@ class ViewController: UIViewController {
         
         present(answerViewController,animated: true, completion: nil)
         hourTextField.text = ""
+        dayButton.isUserInteractionEnabled = true
+        weekButton.isUserInteractionEnabled = true
+        monthButton.isUserInteractionEnabled = true
+        yearButton.isUserInteractionEnabled = true
         
     }
     
