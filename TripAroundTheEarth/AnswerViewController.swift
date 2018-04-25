@@ -15,6 +15,8 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Test
+        
         view.addSubview(answerView)
         view.backgroundColor = UIColor.clear
         answerView.addSubview(returnButton)
